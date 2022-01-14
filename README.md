@@ -15,6 +15,9 @@
 - HTML_Study  시작 
   - HTML_ 개요 
 
+## 2022 01. 15
+  - Python 문법 정리 시작
+
 
 
   
