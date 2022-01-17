@@ -33,7 +33,12 @@
 
 2022 01. 17
 
-Python_ study
+**Python_ study**
 
 - 제어문 정리
 - 3장 연습문제 풀이
+
+**HTML,CSS_STUDY**
+
+- 전역속성 추가
+- css 시작
