@@ -104,3 +104,7 @@
 
 - 파이썬 과목평가 정리 md 추가
 
+## 2022.02.04
+
+- Web,(HTML,CSS) 복습 
+- HTML_Study (Toy project_Navigator) 추가
