@@ -108,3 +108,12 @@
 
 - Web,(HTML,CSS) 복습 
 - HTML_Study (Toy project_Navigator) 추가
+
+## 2022.02.05
+
+- Web 복습 
+- SWEA 문제 5문제 풀이
+
+## 2022.02.06
+
+- 포트폴리오 웹 디자인
