@@ -77,7 +77,7 @@
 
 - /<p></p>/:하나의 문단 (paragraph)
 - /<hr>/ : 문단 레벨 요소에서의 주제의 분리를 의미하며, 수평선으로 표현됨.(A horizontal Rule)
-- /<ol></ol><ul></ul>/: 순서가 있는 리스트 (ordered), 순서가 없는 리스트(unordered)
+- /<ol></ol><ul></ul><li></li>/: 순서가 있는 리스트 (ordered), 순서가 없는 리스트(unordered)
 - /<pre></pre>/: HTML에 작성한 내용을 그대로 표현, 보통 고정폭 글꼴이 사용되고 공백 문자를 유지
 - /<blockquote></blockquote>/: 텍스트가 긴 인용문 주로 들여쓰기를 한 것으로 표현됨.
 - /<div></div>/: 의미 없는 블록 레벨 컨테이너 
@@ -564,6 +564,8 @@ danger: 빨간색
 light: 하얀색
 dark: 검정색
 ```
+
+
 
 # Grid System( web design )
 
