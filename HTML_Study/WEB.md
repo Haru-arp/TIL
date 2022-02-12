@@ -97,19 +97,166 @@
 - 내부 참조(embedding)-<style>
 - 외부 참조(link file) - 분리된 CSS파일
 
+## Q5.  CSS 우선순위
+
+```
+1. !important
+2. Inline Style
+3. id 선택자.
+4. class 선택자
+5. 요소 선택자
+6. 소스 순서
+```
+
+
+
 ## 선택자(Selector) 유형
 
 - 기본 선택자 
     - 전체 선택자, 요소 선택자
     - 클래스 선택자, 아이디 선택자, 속성 선택자.\
-- 결핍자(Combinators)
-    - 자손 결합자, 자식 결합자
-    - 일반 형제 결합자, 인접 형제 결합자
-- 의사 클래스/요소(Pseudo Class)
-    - 링크, 동적 의사 클래스
-    - 구조적 의사 클래스, 기타 의사 클래스, 의사 엘리먼트, 속성 선택자
-
-
+    
+- 결합자(Combinators)
+    - 자손 결합자, 자식 결합자(:첫 번째 요소의 바로 아래 자식인 노드를 선택 >)
+    - 일반 형제 결합자(A~B ~결합자는 형제, 즉 첫 번째 요소를 뒤따르면서, 같은 부모를 공유하는 두 번째 요소를 선택합니다.), 
+        인접 형제 결합자(+, +결합자는 인접 형제, 즉 첫 번째 요소의 바로 뒤에 위치하면서 같은 부모를 공유하는 두 번째 요소를 선택합니다.)
+    
+- 의사 클래스/요소(Pseudo Class) ( 의사 : 는 문서트리가 포함하지 않는 상태 정보에 기반해 요소를 선택할 수 있습니다.), (의사 :: 는 html이 포함하지 않는 개체를 선택합니다. ) https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Selectors
+    - 링크, 동적 의사 클래스 : (:link, :visited, :hover, :active, :focus)
+    
+        - link: 링크의 기본 상태이며, 사용자가 아직 한 번도 이 링크를 통해 연결된 페이지를 방문하지 않은 상태
+        - visited: 사용자가 한 번이라도 이 링크를 통해 연결된 페이지를 방문한 상태입니다.
+        - hover: 사용자의 마우스 커서가 링크 위에 올라가 있는 상태입니다.
+        - active: 사용자가 마우스로 링크를 클릭하고 있는 상태입니다.
+        - focus: 키보드나 마우스의 이벤트(event) 또는 다른 형태로 해당 요소가 포커스(focus)를 가지고 있는 상태입니다.
+        - :hover는 반드시 :link와 :visited가 먼저 정의된 후에 정의되어야 정상적으로 동작합니다.
+        - :active는 반드시 :hover가 먼저 정의된 후에 정의되어야 정상적으로 동작합니다.
+    
+    - 구조적 의사 클래스, 기타 의사 클래스, 의사 엘리먼트, 속성 선택자 ( http://www.tcpschool.com/css/css_selector_pseudoClass )
+    
+        - 구조적 의사 클래스
+    
+            - : first-child : :first-child는 모든 자식(child) 요소 중에서 맨 앞에 위치하는 자식(child) 요소를 모두 선택합니다.
+            - : last-child : :last-child는 모든 자식(child) 요소 중에서 맨 마지막에 위치하는 자식(child) 요소를 모두 선택합니다.
+            - : nth-child : nth-child는 모든 자식(child) 요소 중에서 앞에서부터 n번째에 위치하는 자식(child) 요소를 모두 선택합니다.
+            - : nth-last-child : nth-last-child는 모든 자식(child) 요소 중에서 뒤에서부터 n번째에 위치하는 자식(child) 요소를 모두 선택합니다.
+            - : first-of-type : :first-of-type는 모든 자식(child) 요소 중에서 맨 처음으로 등장하는 특정 타입의 요소를 모두 선택합니다.
+            - : last-of-type : :last-of-type는 모든 자식(child) 요소 중에서 맨 마지막으로 등장하는 특정 타입의 요소를 모두 선택합니다.
+            - : nth-of-type : :nth-of-type는 모든 자식(child) 요소 중에서 n번째로 등장하는 특정 타입의 요소를 모두 선택합니다.
+            - : nth-last-of-type : :nth-last-of-type는 모든 자식(child) 요소 중에서 뒤에서부터 n번째로 등장하는 특정 타입의 요소를 모두 선택합니다.
+            - :only-child :   :only-child는 자식(child) 요소를 단 하나만 가지는 요소의 자식(child) 요소를 모두 선택합니다.
+            - :only-of-type :  :only-of-type는 자식(child) 요소로 특정 타입의 요소 단 하나만을 가지는 요소의 자식(child) 요소를 모두 선택합니다.
+            - :empty: :empty는 자식(child) 요소를 전혀 가지고 있지 않은 요소를 모두 선택합니다.
+            - :root : :root는 해당 문서의 root 요소를 선택합니다.
+    
+        - 기타 의사 클래스 (http://www.tcpschool.com/css/css_selector_etc)
+    
+            - :not :  :not 선택자는 모든 선택자와 함께 사용할 수 있으며, 해당 선택자를 반대로 적용하여 선택합니다.
+    
+            - :lang : 
+    
+            - :lang 선택자는 특정 HTML 요소를 사용자 컴퓨터의 언어 설정에 따라 다르게 표현할 때 사용합니다.
+    
+                예를 들면, 영어에서는 인용의 표현으로 따옴표("")를 사용하나, 프랑스어에서는 부등호(<>)를 사용합니다.
+    
+                이렇게 언어에 따라 달라지는 태그의 모양을 사용자 컴퓨터의 언어 설정에 따라 다르게 표현할 수 있게 해줍니다.
+    
+        - 의사 엘리먼트: (http://www.tcpschool.com/css/css_selector_pseudoElement)
+    
+            - 의사 요소(pseudo-element)는 해당 HTML 요소의 특정 부분만을 선택할 때 사용합니다.
+    
+            - 선택자::의사요소이름 {속성: 속성값;}
+    
+            - ::first-letter:   
+    
+                ```
+                이 의사 요소(pseudo-element)는 텍스트의 첫 글자만을 선택합니다.
+                단, 블록(block) 타입의 요소에만 사용할 수 있습니다.
+                이 의사 요소를 통해 사용할 수 있는 속성은 다음과 같습니다.
+                \- font 속성
+                \- color 속성 
+                \- background 속성
+                \- margin 속성
+                \- padding 속성
+                \- border 속성
+                \- text-decoration 속성
+                \- text-transform 속성
+                \- line-height 속성
+                \- float 속성
+                \- clear 속성
+                \- vertical-align 속성 (단, float 속성값이 none일 경우에만)
+                ```
+    
+            - ::first-line
+    
+            - ```
+                이 의사 요소는 텍스트의 첫 라인만을 선택합니다.
+                단, 블록(block) 타입의 요소에만 사용할 수 있습니다.
+                
+                이 의사 요소를 통해 사용할 수 있는 속성은 다음과 같습니다.
+                
+                - font 속성
+                - color 속성 
+                - background 속성
+                
+                - word-spacing 속성
+                - letter-spacing 속성
+                - text-decoration 속성
+                - text-transform 속성
+                - line-height 속성
+                - clear 속성
+                - vertical-align 속성
+                ```
+    
+            - ::before
+    
+            - ``` 
+                이 의사 요소는 특정 요소의 내용(content) 부분 바로 앞에 다른 요소를 삽입할 때 사용합니다.
+                ```
+    
+            - ::after 
+    
+            - ```
+                이 의사 요소는 특정 요소의 내용(content) 부분 바로 뒤에 다른 요소를 삽입할 때 사용합니다.
+                ```
+    
+            - ::selection
+    
+            - ```
+                이 의사 요소는 해당 요소에서 사용자가 선택한 부분만을 선택할 때 사용합니다.
+                ```
+    
+            - 의사 엘리먼트의 동시 적용: 하나의 HTML 요소에 여러 개의 의사 요소를 동시에 적용할 수 있습니다. 
+    
+        - 속성 선택자 : (http://www.tcpschool.com/css/css_selector_attribute)
+    
+            - 속성 선택자를 사용하면 특정 속성이나 특정 속성값을 가지고 있는 HTML 요소를 선택할 수 있습니다.
+    
+            - \- [속성이름] 선택자 :  [속성이름] 선택자는 특정 속성을 가지고 있는 요소를 모두 선택합니다.
+    
+                \- [속성이름="속성값"] 선택자 : [속성이름="속성값"] 선택자는 특정 속성을 가지고 있으며, 해당 속성의 속성값까지 일치하는 요소를 모두 선택합니다.
+    
+            - 문자열 속성 선택자 :
+    
+                - \- [속성이름~="속성값"] 선택자 : [속성이름~="속성값"] 선택자는 특정 속성의 속성값에 특정 문자열로 이루어진 하나의 단어를 포함하는 요소를 모두 선택합니다.
+    
+                    
+    
+                - \- [속성이름|="속성값"] 선택자 :  [속성이름|="속성값"] 선택자는 특정 속성의 속성값이 특정 문자열로 이루어진 하나의 단어로 시작하는 요소를 모두 선택합니다.
+    
+                    
+    
+                - \- [속성이름^="속성값"] 선택자:  [속성이름^="속성값"] 선택자는 특정 속성의 속성값이 특정 문자열로 시작하는 요소를 모두 선택합니다.
+    
+                    
+    
+                - \- [속성이름$="속성값"] 선택자:  [속성이름$="속성값"] 선택자는 특정 속성의 속성값이 특정 문자열로 끝나는 요소를 모두 선택합니다.
+    
+                    
+    
+                - \- [속성이름*="속성값"] 선택자 : [속성이름*="속성값"] 선택자는 특정 속성의 속성값에 특정 문자열를 포함하는 요소를 모두 선택합니다.
+    
+                     
 
 ## CSS 선택자 정리
 
@@ -124,6 +271,18 @@
 ## CSS 적용 우선순위(cascading order)
 
 - CSS 우선 순위를 아래와 같이 그룹을 지어볼 수 있다.
+
+- Q5.  CSS 우선순위
+  
+    ```
+    1. !important
+    2. Inline Style
+    3. id 선택자.
+    4. class 선택자
+    5. 요소 선택자
+    6. 소스 순서
+    ```
+    
     - 1. 중요도(Importance) - 사용시 주의
             - !important
         2.  우선순위 (Specificity)
@@ -205,7 +364,7 @@
 ## 인라인, 블록 요소 각각의 특징들
 
 - display: block 
-    - 줄 바꿈이 일어나느 요소 
+    - 줄 바꿈이 일어나는 요소 
     - 화면 크기 전체의 가로 폭을 차지한다.
     - 블록 요소 안에 인라인 레벨 요소가 들어갈 수 있음. 
 - display: inline
@@ -320,8 +479,10 @@ CSS 원칙
 
 - 기타 속성
 
-    - flex- grow: 남은 영역을 아이템에 분배
+    - flex- grow: 남은 영역을 아이템에 분배 (https://blogpack.tistory.com/863)
     - order :배치 순서
+    
+    https://heropy.blog/2018/11/24/css-flexible-box/ 확인
 
 ```css
 Flex Item을 위한 속성들
@@ -348,3 +509,75 @@ Flex Container 속성들
 
 
 <hr>
+
+
+
+# BootStrap
+
+
+```css
+mt-1 = .mt-1{
+    margin-top: 0.25rem !important;
+}
+<!---mt-1--->: margin-top , 1rem = 16px 고로 0.25 * 16 = 4px ( 0.25 rem = 4px )
+html의 root 글꼴 크기는 16px
+
+m-1 0.25rem 4px
+m-2 0.5rem 8px
+m-3 1rem 16px
+m-4 1.5rem 24px
+m-5 3rem 48px
+
+.mx-0 {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.mx-auto { 수평 중앙 정렬
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.py-0 {
+    padding -top: 0 !important;
+    padding -bottom: 0 !important;
+}
+spacing 종합
+m : margin                        0  0rem   0px               
+p : padding                        1  0.25rem   4px
+t : top                            2  0.5rem   8px
+b : bottom                        3  1rem   16px
+s : left                        4  1.5rem   24px
+e : right                        5  3rem   48px
+x : left, right
+y : top, bottom
+```
+
+```css
+color                                    #000000 : 검정색
+primary : 파란색                  #ffffff : 흰색             
+secondary: 회색                  rgba(255, 0 , 0) : 빨간색
+success: 초록색                  rgba(0, 255 , 0) : 초록색
+info : 청색                     rgba(0, 0 , 255) : 파란색
+warning: 노란색
+danger: 빨간색
+light: 하얀색
+dark: 검정색
+```
+
+# Grid System( web design )
+
+- 요소들의 디자인과 배치에 도움을 주는 시스템
+
+- 기본 요소
+    - Column: 실제 컨텐츠를 포함하는 부분
+    - Gutter : 칼럼과 칼럼 사이의 공간 ( 사이 간격 )
+    - Container : Column들을 담고 있는 공간
+
+
+
+- Bootstrap Grid system은 flexbox로 제작됨
+- container, rows, column으로 컨텐츠를 배치하고 정렬
+- 반드시 기억해야 할 2가지!
+    - 1. 12개의 column
+        2. 6개의 grid breakpoint (xs, sm, md, lg, xl ,xxl)
