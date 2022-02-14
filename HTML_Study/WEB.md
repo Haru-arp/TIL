@@ -552,8 +552,8 @@ m-5 3rem 48px
 }
 
 .py-0 {
-    padding -top: 0 !important;
-    padding -bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 spacing 종합
 m : margin                        0  0rem   0px               
