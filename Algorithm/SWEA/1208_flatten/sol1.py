@@ -12,8 +12,7 @@ for tc in range(1, T+1):
     cnt = [0] * 101
     for i in box_lst:
         cnt[i] += 1
-
-    # 항상 상자 높이 1 이상 100 이하니까
+   #항상 상자 높이 1 이상 100 이하니까
     min = 101
     max = 0
     for box in box_lst:
