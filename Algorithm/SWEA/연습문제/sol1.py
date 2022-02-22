@@ -1,13 +1,28 @@
-import sys
+# 클래스 선언
+class Stack:
 
-sys.stdin = open('input.txt')
+    # 초기 설정, 스택으로 사용할 리스트 선언
+    def __init__(self):
+        self.stack = []
 
-T = int(input())
+    # In 함수 / Push 함수 List의 Append 함수 이용
+    def push(self, data):
+        self.stack.append(data)
+
+    # Out 함수 / Pop 함수, List의 pop함수 이용
+    def pop(self):
+        if len(self.stack) <= 0:
+            return ("No Data in Stack")
+        else:
+            return self.stack.pop()
 
 
-for tc in range(1, T + 1):
-    string = input()
-    reversed_str = string[::-1]
+stk = Stack()
+stk.push("1")
+stk.push("2")
+stk.push("3")
 
-    print(f'#{tc} {reversed_str} ')
-
+stk.pop()
+stk.pop()
+stk.pop()
+print(stk.stack)
