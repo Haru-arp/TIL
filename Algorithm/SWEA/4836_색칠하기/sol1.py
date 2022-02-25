@@ -1,5 +1,5 @@
 import sys
-
+from pprint import pprint
 sys.stdin = open('input.txt')
 
 T=int(input())
@@ -8,7 +8,8 @@ for test_case in range(1, T+1):
     count = 0 #겹치는 칸의 개수
     N = int(input())
 
-    for i in range(1, N+1):
+
+    for _ in range(1, N+1):
         row1, col1, row2, col2, color = map(int,input().split())
 
         for row in range(row1, row2+1):
@@ -27,4 +28,5 @@ for test_case in range(1, T+1):
                     elif area[row][col] == 1: #만약 색이 빨간색이면,
                         area[row][col] = 3
                         count += 1
+    pprint(area)
     print(f'#{test_case} {count}')

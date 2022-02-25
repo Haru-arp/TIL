@@ -9,8 +9,8 @@ for tc in range(1, T + 1):
     # 내 알고리즘 : 홀수에는 내림차순 짝수에는 오름차순 정렬
     # 홀수번쨰, 즉 짝수 인덱스에는 큰값, 홀수 인덱스에는 작은값
     #홀수번째 부분 내림차순 정렬
-    for i in range(10):
-        if  i & 1:
+    for i in range(len(lst)):
+        if i & 1:
             max_idx = i
             for j in range(i+1, N):
                 if lst[j] < lst[max_idx]:
