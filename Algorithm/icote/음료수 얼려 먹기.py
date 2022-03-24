@@ -1,3 +1,5 @@
+import sys
+sys.stdin = open('input.txt')
 # n, m을 공백으로 구분하여 입력받기.
 n, m = map(int, input().split())
 
