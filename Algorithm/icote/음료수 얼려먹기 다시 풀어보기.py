@@ -17,12 +17,10 @@ def dfs(graph, i, j):
 n, m = map(int, input().split())
 
 graph = [list(map(int, input())) for _ in range(n)]
-
 count = 0
 for i in range(n):
     for j in range(m):
         if graph[i][j] == 0:
             dfs(graph, i, j)
             count += 1
-pprint(graph)
 print(count)
