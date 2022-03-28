@@ -2,36 +2,39 @@ import sys
 sys.stdin = open('input.txt')
 from collections import deque
 
-T = int(input())
+
 dx = [-1, 1, 0, 0]
-dy = [0, 0, 1, -1]
+dy = [0, 0, -1, 1]
 
 def bfs(start):
-    que.append(start)
+    Q.append(start)
     global result
-    while que:
-        x, y = que.popleft()
 
+    while Q:
+        x, y = Q.popleft()
         for k in range(4):
-            xx = x + dx[k]
-            yy = y + dy[k]
+            nx = x + dx[k]
+            ny = y + dy[k]
 
-            if 0 <= xx < N and 0 <= yy < N:
-                if visit_level[xx][yy] == 0 and maze[xx][yy] != 1:
-                    visit_level[xx][yy] = visit_level[x][y] + 1
-                    if maze[xx][yy] == 3:
-                        result = visit_level[xx][yy] - 1
+            if 0 <= nx < N and 0 <= ny < N:
+                if visited[nx][ny] == 0 and maze[nx][ny] != 1:
+                    visited[nx][ny] = visited[x][y] + 1
+
+                    if maze[nx][ny] == 3:
+                        result = visited[nx][ny] - 1
                         return result
-                    que.append((xx,yy))
+                    Q.append((nx, ny))
     return result
 
 
+T = int(input())
 for tc in range(1, T+1):
     N = int(input())
-    maze = [list(map(int , input())) for _ in range(N)]
-    visit_level = [[0 for _ in range(N)] for _ in range(N)]
+    maze = [list(map(int, input()) for _ in range(N))]
+    visited = [[0 for _ in range(N)] for _ in range(N)]
+
     result = 0
-    que = deque()
+    Q = deque()
 
     for i in range(N):
         for j in range(N):
