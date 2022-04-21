@@ -36,7 +36,7 @@
 **Python_ study**
 
 - 제어문 정리
-- 3장 연습문제 풀이
+- 3장 연습문제 풀이.
 
 **HTML,CSS_STUDY**
 
